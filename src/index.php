@@ -101,15 +101,15 @@ include "functions/functions.php";
                 });
 
                 for (var i = 0; i < tempArray.length; ++i) {
-                    <?php
-                        if (sizeof($schools) > 1) {
-                            echo '                   var m = L.marker(tempArray[i]).bindPopup(tempArray[i][2]);
-                    markers.addLayer(m);';
-                        } else {
-                            echo 'L.marker(tempArray[i]).addTo(map).bindPopup(tempArray[i][2]);';
-                        }
-                        ?>
+                    var lat = parseFloat(tempArray[i][0]);
+                    var lon = parseFloat(tempArray[i][1]);
+                    var name = tempArray[i][2];
+                    var idx = tempArray[i][3];
+                    var popupContent = '<b>' + name + '</b><br>' +
+                        '<a href="#school-' + idx + '" class="btn btn-sm btn-primary" onclick="event.preventDefault(); document.getElementById(\'school-' + idx + '\').scrollIntoView({behavior:\'smooth\', block:\'start\'});">Skatīt tabulā</a>';
 
+                    var m = L.marker([lat, lon]).bindPopup(popupContent);
+                    markers.addLayer(m);
                 }
 
                 map.addLayer(markers);

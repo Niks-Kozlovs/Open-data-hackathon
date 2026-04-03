@@ -5,8 +5,9 @@ for ($i = 0; $i < count($schools); $i++)  {
     $id_subT="Subtable$i";
     $td_id="tdd$i";
 
+    $schoolId = $schools[$i]->getID();
     echo'
-     <div class="row" id="list-item">
+     <div class="row" id="school-'.$schoolId.'" style="scroll-margin-top: 90px;">
         <div class="col">
             <p>
                 <h2>'.$schools[$i]->getName().'</h2>

@@ -10,7 +10,10 @@ class Database
 {
 
     public static function &conn() {
-  $server = 'localhost';$dbName = 'macibu_iestades_latvija';$user = 'root';$pass = '';
+        $server = 'localhost';
+        $dbName = 'macibu_iestades_latvija';
+        $user = 'root';
+        $pass = '';
         $conn = NULL;
         if ($conn == NULL) {
             try {
@@ -46,12 +49,11 @@ class Database
         $stm->execute(array(':school'=> $school));
         return $stm->fetchAll(PDO::FETCH_ASSOC);
     }
-    //
+
     public function getSchools(){
         require 'School.php';
-        $stm = self::conn()->prepare('Select ID,nosaukums,registracijas_numurs,adrese,direktors,telefons,email,latitude ,longtitude from macibu_iestades limit 100 ORDER BY nosaukums ASC');
+        $stm = self::conn()->prepare('Select ID,nosaukums,registracijas_numurs,adrese,direktors,telefons,email,latitude ,longtitude from macibu_iestades ORDER BY nosaukums ASC LIMIT 100');
         $stm->execute();
-        #die(var_dump($stm->fetchAll(PDO::FETCH_ASSOC)));
         return $stm->fetchAll(PDO::FETCH_CLASS,'School');
     }
 

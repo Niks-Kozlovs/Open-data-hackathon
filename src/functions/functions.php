@@ -7,13 +7,14 @@
 			$long = $school->getLongtitude();
 			$lat = $school->getLatitude();
 			$name = replaceQuotes($school->getName());
+			$id = $school->getID();
 			if ($long == NULL or $lat == NULL) {
 				continue;
 			}
 			if ($coordinates != '[') {
 				$coordinates .= ',';
 			}
-			$coordinates .= '["'.$lat.'","'.$long.'","'.$name.'"]';
+			$coordinates .= '["'.$lat.'","'.$long.'","'.$name.'","'.$id.'"]';
 		}
 		$coordinates .= ']';
 		echo $coordinates;
