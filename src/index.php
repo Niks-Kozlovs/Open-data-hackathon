@@ -20,10 +20,11 @@ include "functions/functions.php";
     <title>Atrodi Skolu</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="180x180" href="ssrc/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon/favicon-16x16.png">
-    <link rel="manifest" href="src/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" href="favicon/favicon.ico" sizes="any">
+    <link rel="manifest" href="favicon/site.webmanifest">
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/menu.js"></script>
     <script src="https://use.fontawesome.com/320ac68418.js"></script>
