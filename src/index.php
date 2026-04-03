@@ -40,6 +40,27 @@ include "functions/functions.php";
         input::-webkit-calendar-picker-indicator {
             display: none;
         }
+        .leaflet-popup-content a.btn {
+            color: #fff !important;
+            background-color: #007bff !important;
+            border-color: #007bff !important;
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            text-decoration: none;
+            border-radius: 0.2rem;
+            font-size: 0.85rem;
+            transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+        }
+        .leaflet-popup-content a.btn:hover,
+        .leaflet-popup-content a.btn:focus {
+            color: #fff !important;
+            background-color: #0056b3 !important;
+            border-color: #0056b3 !important;
+            text-decoration: none;
+        }
+        .leaflet-popup-content {
+            text-align: center;
+        }
     </style>
 </head>
 <body style="overflow-x:hidden">
