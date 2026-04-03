@@ -9,7 +9,7 @@
 function filter($posts,$database){
 
     $queryWhere = '';
-    $filterArray = [
+    $filterArray =[
         //Kamer nav daudz opcijas var pievienot ar roku.
         'iestades1' => '(iestID = 1)',
         'iestades2' => '(iestID = 2)',
@@ -70,13 +70,13 @@ function filter($posts,$database){
 		FROM
 			izglitibas_profesijas
 		LEFT JOIN profesijas ON izglitibas_profesijas.profesija = profesijas.ID) AS profesijas ON macibu_iestades.ID = profesijas.iestades_ID 
-        LEFT JOIN macibu_iestades_papildus ON macibu_iestades.ID = macibu_iestades_papildus.iestades_ID '.$queryWhere.' group by macibu_iestades.ID limit 100 ORDER BY macibu_iestades.nosaukums ASC;';
+        LEFT JOIN macibu_iestades_papildus ON macibu_iestades.ID = macibu_iestades_papildus.iestades_ID '.$queryWhere.' group by macibu_iestades.ID ORDER BY macibu_iestades.nosaukums ASC LIMIT 100;';
 
     return $database->getFiltered($queryDefault);
 }
 
     function getProfesijasForFilter() {
-        $profArray = [];
+        $profArray =[];
         $profesijasList = Database::getProfesijasList();
         foreach ($profesijasList as $profesija) {
             $profArray += [$profesija['profesija'] => 'profesijas.profesija = \''.$profesija['profesija'].'\''];
